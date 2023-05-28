@@ -31,6 +31,7 @@ else
   git clone https://github.com/update450/lo2bootstrap $HOME/lo2bootstrap
 fi
 
+[ -d $HOME/lo2bootstrap/.venv ] || python3 -m venv .venv
 export VIRTUAL_ENV="$HOME/lo2bootstrap/.venv"
 export PATH="$HOME/lo2bootstrap/.venv/bin:$PATH"
 .venv/bin/python3 -m pip install --upgrade pip
