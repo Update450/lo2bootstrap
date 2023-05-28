@@ -31,10 +31,11 @@ else
   git clone https://github.com/update450/lo2bootstrap $HOME/lo2bootstrap
 fi
 
+cd $HOME/lo2bootstrap
 [ -d $HOME/lo2bootstrap/.venv ] || python3 -m venv .venv
 export VIRTUAL_ENV="$HOME/lo2bootstrap/.venv"
 export PATH="$HOME/lo2bootstrap/.venv/bin:$PATH"
 .venv/bin/python3 -m pip install --upgrade pip
 .venv/bin/python3 -m pip install -r requirements.txt
 
-cd $HOME/lo2bootstrap && ansible-playbook run.yml
+ansible-playbook run.yml
