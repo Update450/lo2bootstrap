@@ -1,0 +1,15 @@
+all:
+  hosts:
+    localhost:
+      ansible_connection: local
+
+  vars:
+    users:
+      - a1r
+      - a2r
+      - a3r
+      - a4r
+      - a1p
+      - a2p
+      - a3p
+      - a4p

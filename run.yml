@@ -1,0 +1,6 @@
+- name: Provision workstation
+  hosts: localhost
+  become: true
+
+  tasks:
+    - import_tasks: tasks/users.yml

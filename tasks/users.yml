@@ -1,0 +1,28 @@
+- name: Check user existence
+  command: id -u "{{ item }}"
+  register: existing_users
+  changed_when: false
+  failed_when: false
+  ignore_errors: true
+  loop: "{{ users }}"
+
+- name: Create users
+  user:
+    name: "{{ item }}"
+    shell: /bin/bash
+    password: ""
+    createhome: true
+    state: present
+  loop: "{{ users }}"
+  loop_control:
+    extended: true
+  when: existing_users.results[ansible_loop.index0].rc != 0
+
+- name: Force password change on login
+  shell: chage -d 0 "{{ item }}"
+  loop: "{{ users }}"
+  loop_control:
+    extended: true
+  when: existing_users.results[ansible_loop.index0].rc != 0
+
+  
