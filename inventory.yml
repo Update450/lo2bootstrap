@@ -5,11 +5,25 @@ all:
 
   vars:
     users:
+      - a1
+      - a2
+      - a3
       - a1r
       - a2r
       - a3r
       - a4r
-      - a1p
-      - a2p
-      - a3p
-      - a4p
+      - b1
+      - b2
+      - b3
+      - c1
+      - c2
+      - c3
+      - d1
+      - d2
+      - d3
+      - e1
+      - e2
+      - e3
+      - a11
+      - a12
+      - a13
